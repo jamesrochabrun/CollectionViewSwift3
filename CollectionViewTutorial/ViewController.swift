@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         gridLayout = GridLayout()
         gridCollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: gridLayout)
-        gridCollectionView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        gridCollectionView.backgroundColor = UIColor.orange
         gridCollectionView.showsVerticalScrollIndicator = false
         gridCollectionView.showsHorizontalScrollIndicator = false
         gridCollectionView.dataSource = self
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         fullImageView = UIImageView()
         fullImageView.contentMode = .scaleAspectFit
-        fullImageView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        fullImageView.backgroundColor = UIColor.lightGray
         fullImageView.isUserInteractionEnabled = true
         fullImageView.alpha = 0
         self.view.addSubview(fullImageView)
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         frame.size.height = self.view.frame.size.height
         frame.size.width = self.view.frame.size.width
         frame.origin.x = 0
-        frame.origin.y = self.view.frame.minY
+        frame.origin.y = 0
         gridCollectionView.frame = frame
         fullImageView.frame = gridCollectionView.frame
     }

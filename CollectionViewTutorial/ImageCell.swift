@@ -17,8 +17,8 @@ class ImageCell: UICollectionViewCell {
         
         imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.isUserInteractionEnabled = false
         contentView.addSubview(imageView)
-
     }
     
     override func layoutSubviews() {
@@ -35,6 +35,4 @@ class ImageCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

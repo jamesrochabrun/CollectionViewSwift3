@@ -10,29 +10,24 @@ import UIKit
 
 class GridLayout: UICollectionViewFlowLayout {
     
-    let itemHeight: CGFloat = 120
     let innerSpace: CGFloat = 1.0
+    let numberOfCellsOnRow: CGFloat = 3
+
     
     override init() {
         super.init()
-        setUpLayout()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        //fatalError("init(coder:) has not been implemented")
-        super.init(coder: aDecoder)
-       // setUpLayout()
-    }
-    
-    func setUpLayout() {
         self.minimumLineSpacing = innerSpace
         self.minimumInteritemSpacing = innerSpace
         self.scrollDirection = .vertical
     }
     
-    /// here we define the width of each cell, creating a 2 column layout. In case you would create 3 columns, change the number 2 to 3
+    required init?(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+    
     func itemWidth() -> CGFloat {
-        return (collectionView!.frame.size.width/3)-self.innerSpace
+        return (collectionView!.frame.size.width/self.numberOfCellsOnRow)-self.innerSpace
     }
     
     override var itemSize: CGSize {
